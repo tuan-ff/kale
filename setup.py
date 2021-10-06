@@ -23,14 +23,14 @@ setup(
     author='Stefano Fioravanzo',
     author_email='stefano.fioravanzo@gmail.com',
     license='Apache License Version 2.0',
-    packages=['kale',
-              'kale.common',
-              'kale.config',
-              'kale.marshal',
-              'kale.processors',
-              'kale.rpc',
-              'kale.kfserving',
-              'kale.sdk',
+    packages=['backend.kale',
+              'backend.kale.common',
+              'backend.kale.config',
+              'backend.kale.marshal',
+              'backend.kale.processors',
+              'backend.kale.rpc',
+              'backend.kale.kfserving',
+              'backend.kale.sdk',
               ],
     install_requires=[
         'kfp',
@@ -50,7 +50,6 @@ setup(
         'packaging > 20',
         'ml_metadata >= 0.26.0, < 1',
         'progress >= 1.5',
-        'kfserving >= 0.4.0, < 0.5.0',
         'kubernetes < 12.0.0',
     ],
     extras_require={
@@ -64,9 +63,9 @@ setup(
         ]
     },
     entry_points={'console_scripts':
-                  ['kale=kale.cli:main',
-                   'kale_server=kale.cli:server',
-                   'kale-volumes=kale.cli:kale_volumes']},
+                  ['kale=backend.kale.cli:main',
+                   'kale_server=backend.kale.cli:server',
+                   'kale-volumes=backend.kale.cli:kale_volumes']},
     python_requires='>=3.6.0',
     include_package_data=True,
     zip_safe=False
